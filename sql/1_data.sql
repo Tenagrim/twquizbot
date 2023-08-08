@@ -3,6 +3,14 @@ insert into USER_STATE(id, SYSNAME) values (1, 'AUTHORIZATION');
 insert into USER_STATE(id, SYSNAME) values (2, 'AUTHORIZED');
 insert into USER_STATE(id, SYSNAME) values (3, 'FINISH');
 
+insert into QUESTION(ID, TEXT) values (0, 'Операционная система на которой вам предстоит работать');
+insert into QUESTION(ID, TEXT) values (1, 'Пароль от wi-fi в кампусе');
+insert into QUESTION(ID, TEXT) values (2, 'Сколько лет казанскому кампусу?');
+insert into QUESTION(ID, TEXT) values (3, 'В каком месяце мы празднуем день рождения нашего кампуса?');
+insert into QUESTION(ID, TEXT) values (4, 'Скольо рабочих мест у нас в кампусе?');
+insert into QUESTION(ID, TEXT) values (5, 'Правильное написание адреса сайта с вашими заданиями, проверками, календарем и всем остальным');
+insert into QUESTION(ID, TEXT) values (6, 'Корректный формат ввода логина на учебной платформе');
+
 insert into ANSWER(QUESTION_ID, RIGHT_ANSWER, TEXT) values (0, false, 'Linux');
 insert into ANSWER(QUESTION_ID, RIGHT_ANSWER, TEXT) values (0, false, 'Windows');
 insert into ANSWER(QUESTION_ID, RIGHT_ANSWER, TEXT) values (0, true, 'MacOS');

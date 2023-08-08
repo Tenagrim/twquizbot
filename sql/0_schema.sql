@@ -10,13 +10,13 @@ create table Q_USER
     EXTERNAL_ID varchar(50),
     CHAT_ID     varchar(50),
     NICKNAME    varchar(50),
-    STATE_ID    integer references USER_STATE (ID) not null,
-    CREATE_DATE timestamp default now()
+    STATE_ID    integer references USER_STATE (ID) default 0,
+    CREATE_DATE timestamp                          default now()
 );
 
 create table QUESTION
 (
-    ID   serial primary key,
+    ID   integer primary key,
     TEXT text
 );
 
@@ -25,10 +25,11 @@ create table Q_SESSION
     ID               serial primary key,
     USER_ID          integer references Q_USER (ID),
     CREATE_DATE      timestamp default now(),
+    FINISH_DATE      timestamp,
     LAST_QUESTION_ID integer references QUESTION (ID)
 );
 
-alter table Q_USER add column ACTIVE_SESSION_ID integer references Q_SESSION(ID);
+alter table Q_USER add column ACTIVE_SESSION_ID integer references Q_SESSION (ID);
 
 create table ANSWER
 (
@@ -40,8 +41,9 @@ create table ANSWER
 
 create table SESSION_ANSWER
 (
-    SESSION_ID integer references Q_SESSION (ID),
-    ANSWER_ID  integer references ANSWER (ID),
+    ID          serial primary key,
+    SESSION_ID  integer references Q_SESSION (ID),
+    ANSWER_ID   integer references ANSWER (ID),
     CREATE_DATE timestamp default now()
 );
 
