@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USER}
+    password: ${DATASOURCE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+bot:
+  name: ${BOT_NAME}
+  token: ${BOT_TOKEN}
+server:
+  port: ${PORT:5000}

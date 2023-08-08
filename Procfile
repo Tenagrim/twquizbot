@@ -1,0 +1,1 @@
+web: sh target/bin/herbert_bot
