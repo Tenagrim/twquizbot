@@ -1,11 +1,11 @@
 package com.tenagrim.telegram.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
-@Getter
-@AllArgsConstructor
+import javax.validation.constraints.NotNull;
+
+@Data
 public class Message {
+    @NotNull
     private String text;
 }

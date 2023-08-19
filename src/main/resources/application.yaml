@@ -5,8 +5,11 @@ spring:
     password: ${DATASOURCE_PASSWORD}
 
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
+
+
 bot:
   name: ${BOT_NAME}
   token: ${BOT_TOKEN}
